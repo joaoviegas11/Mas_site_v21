@@ -58,20 +58,21 @@
             <select class="form-select" id="M_Pagamento">
               <option selected>Escolher</option>
               <option value="1">MBway</option>
-              <option value="2">Visa</option>
-              <option value="3">Paypall</option>
+              <option value="2">PayPall</option>
+              <option value="3">Visa</option>
             </select>
-            <div class="card   d-none">
+            <div class="mb-3">
+            <div class="card d-none" id="selt1">
               <div class="card-body">
                 <input type="text" value="" placeholder="Telemovel">
               </div>
             </div>
-            <div class="card  d-none">
+            <div class="card  d-none" id="selt2">
               <div class="card-body">
                 <input type="text" value="" placeholder="Telemovel">
               </div>
             </div>
-            <div class="card">
+            <div class="card d-none" id="selt3">
               <div class="card-body">
                 <input type="text" value="" placeholder="Número do cartão">
                 <input type="text" value="" placeholder="Data de expiração">
@@ -134,25 +135,66 @@
 
               </div>
             </div>
-          <p class="card-text" style="text-align: center;">  <input id="Button_Criar_Conta" class="btn btn-primary  btn-lg" type="button" value="Criar Conta" > </p>
+          </div>
+            <p class="card-text" style="text-align: center;">  <input id="Button_Criar_Conta" class="btn btn-primary  btn-lg" type="button" value="Criar Conta" > </p>
                         
-        </div>
+        
+      </div>
       </div>
 
 
     
     <script>
       $(document).ready(()=>{
+        $("#M_Pagamento").change(()=>{
+          /*
+               if (nome.length < 3) {
+        document.getElementById("NomeError").classList.remove("d-none");
+        return false;
+    } else {
+        if (!document.getElementById("NomeError").classList.contains("d-none")) {
+            document.getElementById("NomeError").classList.add("d-none");
+        }
+        return true
+    }
+          */
+          switch ($("#M_Pagamento").val()) {
+            case "1":
+            document.getElementById("selt1").classList.remove("d-none");
+            document.getElementById("selt2").classList.add("d-none");
+            document.getElementById("selt3").classList.add("d-none");
+              break;
+            case "2":
+            document.getElementById("selt1").classList.add("d-none");
+            document.getElementById("selt2").classList.remove("d-none");
+            document.getElementById("selt3").classList.add("d-none");
+              break;
+            case "3":
+            document.getElementById("selt1").classList.add("d-none");
+            document.getElementById("selt2").classList.add("d-none");
+            document.getElementById("selt3").classList.remove("d-none");
+              break;
+          
+            default:
+            document.getElementById("selt1").classList.add("d-none");
+            document.getElementById("selt2").classList.add("d-none");
+            document.getElementById("selt3").classList.add("d-none");
+              break;
+          }
+        })
         $("#Button_Criar_Conta").click(function () {
 
 
 
             let cadastro = {
-                name: $("#Nome").val(),
+                Nome: $("#Nome").val(),
                 Morada: $("#Morada").val(),
                 Nif: $("#Nif").val(),
                 Password1: $("#Password1").val(),
-                M_Pagamento: $("#M_Pagamento").val()
+                M_Pagamento: $("#M_Pagamento").val(),
+
+
+
             }
             if (JSON.parse(window.localStorage.getItem('Lista_clients')) == null) {
                 window.localStorage.setItem('Lista_clients', '[]');
