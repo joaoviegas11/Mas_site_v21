@@ -188,10 +188,12 @@
 
             let cadastro = {
                 Nome: $("#Nome").val(),
+                Mail: $("#Mail").val(),
                 Morada: $("#Morada").val(),
                 Nif: $("#Nif").val(),
                 Password1: $("#Password1").val(),
                 M_Pagamento: $("#M_Pagamento").val(),
+                Plano:"0",
 
 
 
@@ -203,13 +205,14 @@
                 b = a.concat([cadastro]);
                 window.localStorage.setItem('Lista_clients', JSON.stringify(b));  
             } else {
-                console.log('cheguei ao else!')
+                console.log("Existe Lista_clients")
                 var a = JSON.parse(window.localStorage.getItem('Lista_clients'));
                 b = a.concat([cadastro]);
                 window.localStorage.setItem('Lista_clients', JSON.stringify(b));
             } 
             console.log(window.localStorage.getItem('Lista_clients'))
-            //window.location = 'pets.html'
+            
+           window.location = 'Login_conta.html'
         })
       })
     </script>
