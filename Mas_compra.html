@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Bungee' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -17,65 +18,60 @@
 
     <script src ="https://www.google.com/jsapi" type="text/javascript"></script>
     <title>PawFection</title>
-</head>
-<style>
-    body{font-family: "Open Sans",Verdana, Tahoma, sans-serif;}
+    <style>
+        body {
+            font-family: 'Bungee';font-size: 21px;
+        }
 </style>
-<body style="background-color: #B6DCE7;">
-    <div class="container " style="background-color: #B6DCE7;">
-        <div class="row align-items-start fixed-top " style="background-color: #B6DCE7;">
-            <div class="  mt-2"></div>
-            <div class="col-2">
+</head>
 
+<body style="background-color: #B6DCE7;" >
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="Pagina_inical.html"><i class="fa-solid fa-paw"></i></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" aria-current="page" href="#">Perfil</a>
+              <a class="nav-link" href="#">O Meu Animal</a>
+              <a class="nav-link" href="Mas_compra.html">Encomendar</a>
+              </div>
+          </div>
+        </div>
+    </nav>
+    <div class="container " style="background-color: #B6DCE7;">
+        
+        <div class="row align-items-start" style="background-color: #B6DCE7;">
+            <div class="  mt-2"></div>
+            <div class="col-2" data-bind="if:car().length>0">
+                <button class="btn btn-danger" type="button" id="button-carrinho"   data-bs-toggle="modal" data-bs-target="#staticBackdrop">Carrinho<i class="fa fa-shopping-basket" aria-hidden="true"></i></button>
             </div>
             <div class="col-8"> 
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Nome do produto" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-secondary" type="button" id="button-addon2">Pesquisar</button>
+                    <input type="text" data-bind="textInput:pesquisa_str" class="form-control" placeholder="Nome do produto" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-secondary" type="button" id="button-addon2" data-bind="click:filtrar">Pesquisar</button>
                   </div>
                 </div> 
                 <div class="col-2">
-                    <button class="btn btn-danger" type="button" id="button-carrinho"   data-bs-toggle="modal" data-bs-target="#staticBackdrop">Carrinho<i class="fa fa-shopping-basket" aria-hidden="true"></i></button>
+                    <button class="btn btn-primary" type="button" id="button-carrinho"   data-bs-toggle="modal" data-bs-target="#staticBackdrop">Pedidos<i class="fa fa-shopping-bag" aria-hidden="true"></i></button>
                 </div>
+                
+                
             </div>
-        <div class="row align-items-start  mt-5">
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://www.tiendanimal.pt/dw/image/v2/BDLQ_PRD/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dw21dfe8da/images/pienso_perros_taste_of_the_wild_pacific_stream_salmon_TAS74198609581_M.jpg?sw=320&sh=320" class="card-img-top" alt="...">
+        <div class="row align-items-start  mt-5" data-bind="foreach:compras">    
+            <div class="col-4 mb-3">
+                <div class="card" style="width: 18rem;" >
+                    <img data-bind="attr:{src:Imagem}" class="card-img-top" alt="...">
                     <hr>
                     <div class="card-body">
                         
-                        <p style="text-align: center;font-size: x-large;">TASTE OF THE WILD SALMÃO</p>
-                        <p style="text-align: center;font-size: large;">15.49€</p>
-                        <p class="card-text" style="text-align: center;">  <input class="btn btn-primary  btn-lg" type="button" value="Comprar" > </p>
-                        <p class="card-text" style="text-align: center;">  <input class="btn btn-primary"  type="button" value="Adicionar ao carrinho" data-bind="click:adiciona_carrinho(15.49,'TASTE OF THE WILD SALMÃO')"> </p>
-                   </div>
-                  </div>
-            </div>
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://www.tiendanimal.pt/dw/image/v2/BDLQ_PRD/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dw5bc9bb3c/images/pienso_perros_royal_canin_maxi_adult_ROY153637_M.jpg?sw=320&sh=320" class="card-img-top" alt="...">
-                    <hr>
-                    <div class="card-body">
-                        
-                        <p style="text-align: center;font-size: x-large;">ROYAL CANIN MAXI ADULT</p>
-                        <p style="text-align: center;font-size: large;">21.49€</p>
-                        <p class="card-text" style="text-align: center;">  <input class="btn btn-primary  btn-lg" type="button" value="Comprar" > </p>
-                        <p class="card-text" style="text-align: center;">  <input class="btn btn-primary"  type="button" value="Adicionar ao carrinho" data-bind="click:adiciona_carrinho(1511.49,'TASTE OF sadzsd WILD SALMÃO')"> </p>
-                   </div>
-                  </div>
-            </div>
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://www.tiendanimal.pt/dw/image/v2/BDLQ_PRD/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dwf30e3323/images/pienso_perros_royal_canin_adult_medium_ROY152036_M%20(2).jpg?sw=320&sh=320" class="card-img-top" alt="...">
-                    <hr>
-                    <div class="card-body">
-                        
-                        <p style="text-align: center;font-size: x-large;">ROYAL CANIN ADULT MEDIUM</p>
-                        <p style="text-align: center;font-size: large;">24.19€</p>
-                        <p class="card-text" style="text-align: center;">  <input class="btn btn-primary  btn-lg" type="button" value="Comprar" > </p>
-                        <p class="card-text" style="text-align: center;">  <input class="btn btn-primary"  type="button" value="Adicionar ao carrinho" data-bind="click:adiciona_carrinho(115.49,'AXzx OF THE WILD SALMÃO')"> </p>
-                        <p class="card-text d-none" style="text-align: center;">  <input class="btn btn-primary"  type="button" value="Adicionar ao carrinho" data-bind="click:clear()"> </p>
+                        <p style="text-align: center;font-size: x-large;" data-bind="text:Name"></p>
+                        <p style="text-align: center;font-size: large;" data-bind="text:Preço">€</p>
+                        <p class="card-text" style="text-align: center;">  <input class="btn btn-primary  btn-lg" type="button" value="Comprar" data-bind="click:$parent.Compra" > </p>
+                        <p class="card-text" style="text-align: center;">  <input class="btn btn-primary"
+                              type="button" value="Adicionar ao carrinho" data-bind="attr:{'id':Name+'_'+Preço},click:$parent.adiciona_carrinho"> </p>
                    </div>
                   </div>
             </div>
@@ -95,16 +91,19 @@
         <div class="modal-body">
             <table class="table table-striped table-condensed">
                 <thead>
-                <tr><th>Nome</th><th>Preço</th></tr>
+                <tr><th>Nome</th><th>Preço</th><th><i style="color: white;" class="fa fa-trash" aria-hidden="true"></i></th></tr>
                 </thead>
                 <tbody data-bind="foreach: car">
                 <tr>
                 <td data-bind="text: Name"></td>
-                <td data-bind="text: Preco"></td>
+                <td ><span data-bind="text: Preco"></span>€</td>
+                <td><button><i class="fa fa-trash" aria-hidden="true"></i></button></td>
                 </tr>
                 </tbody>
        </table>
-     <!--  <h5>Total da compra:<span data-bind="text:Total"></span></h5>-->
+       <hr>
+      <h5>Total da compra:<span style="color: white;">i</span>
+        <span data-bind="text:Total"></span>€</h5>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
           <button type="button" class="btn btn-primary" data-bs-dismiss="modal" data-bind="click:Compra"> Comprar</button> 
         
@@ -121,12 +120,38 @@
 self.carrinho3 = [];
 self.Total=ko.observable(0);
 self.car = ko.observableArray();
+self.compras=ko.observableArray([]);
+self.pesquisa_str=ko.observable("")
+self.compraslist=[{
+    Name:"ROYAL CANIN MAXI ADULT RAÇÃO PARA CÃES",
+    Preço:62.69,
+    Imagem:"https://www.tiendanimal.pt/dw/image/v2/BDLQ_PRD/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dw5bc9bb3c/images/pienso_perros_royal_canin_maxi_adult_ROY153637_M.jpg?sw=320&sh=320"
 
-self.adiciona_carrinho = function (preco,nome) {
+},{
+    Name:"Criadores Dietetic Hipoalergénico ROYAL cães",
+    Preço:12.95,
+    Imagem:"https://www.tiendanimal.pt/dw/image/v2/BDLQ_PRD/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dw81f2baf4/images/pienso_perros_criadores_dietetic_hipoalergenico_sin_cereales_CRD4207_M.jpg?sw=320&sh=320"
+},{
+    Name:"Taste of the Wild Pacific Stream Salmão ração para cães",
+    Preço:15.49,
+    Imagem:"https://www.tiendanimal.pt/dw/image/v2/BDLQ_PRD/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dw21dfe8da/images/pienso_perros_taste_of_the_wild_pacific_stream_salmon_TAS74198609581_M.jpg?sw=320&sh=320"
+},{
+    Name:"ROYAL Canin Adult Medium ração para cães",
+    Preço:24.19,
+    Imagem:"https://www.tiendanimal.pt/dw/image/v2/BDLQ_PRD/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dwf30e3323/images/pienso_perros_royal_canin_adult_medium_ROY152036_M%20(2).jpg?sw=320&sh=320"
+},]
+self.compras(self.compraslist.concat([]))
+self.Compra=function(){
+    
+    alert("Compra efetuada com sucesso!")
+    location.reload()
+}   
+self.adiciona_carrinho = function() {
+    console.log(0)
                 let dic={}
-                dic["Name"]=nome
-                dic["Preco"]=preco
-                self.Total=parseFloat(self.Total)+parseFloat(preco)
+                dic["Name"]=this.Name
+                dic["Preco"]=this.Preço
+                self.Total(parseFloat(self.Total())+parseFloat(this.Preço))
              self.car.push(dic);
                 self.carrinho3= self.carrinho3.concat([dic]);
                     console.log(JSON.stringify(self.carrinho3));
@@ -134,23 +159,45 @@ self.adiciona_carrinho = function (preco,nome) {
                   //  self.car["car"]=self.carrinho3 
                  }
 
+self.filtrar=function() {
+    //console.log(self.pesquisa_str())
+    //console.log(self.compras());
+    for (let index = 0; index < self.compraslist.length; index++) {
+        const element=self.compraslist[index]
+        
+        console.log(self.compraslist)
+        //console.log(index+" "+String(self.compras()[index].Name))
+        //console.log(self.compraslist[index].Name)
+        //console.log(!(self.pesquisa_str()==''||String(self.compraslist[index].Name).includes(self.pesquisa_str())))
+       if(!(self.pesquisa_str()==''||String(element.Name).includes(self.pesquisa_str()))){
+        
+        self.compras.remove(element);
+        //console.log(self.compraslist[index]);
+    } 
+    else{
+        //self.compraslist[index].Class1="col-4 mb-3";
+        if(!self.compras().includes(element)){
+        
+        self.compras.push(element);}
+        
+    }
+    }
+    
+    
+    
+    
+    console.log(self.compras())
+}
 self.clear=function(){
     self.Total=0
     self.carrinho3 = [];
 self.car = ko.observableArray();
 }          
-self.Compra=function(){
     
-    alert("Compra efetuada com sucesso!")
-    location.reload()
-}       
 }
-ko.options.useOnlyNativeEvents = true;
 
 ko.applyBindings(new myViewModel());
-        $(document).ready(function(){
-            
-        })
+      
 
            /* 
             var myViewModel = {

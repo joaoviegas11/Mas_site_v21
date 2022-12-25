@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Bungee' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -17,11 +16,29 @@
 
     <script src ="https://www.google.com/jsapi" type="text/javascript"></script>
     <title>PawFection </title> 
-</head>
-<style>
-    body{font-family: "Open Sans",Verdana, Tahoma, sans-serif;}
-</style>
+    <style>
+      body {
+               font-family: 'Bungee';font-size: 21px;
+           }
+   </style>
+  </head>
+
 <body style="background-color: #B6DCE7;">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="Pagina_inical.html"><i class="fa-solid fa-paw"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" aria-current="page" href="#">Perfil</a>
+          <a class="nav-link" href="#">O Meu Animal</a>
+          <a class="nav-link" href="#">Encomendar</a>
+          </div>
+      </div>
+    </div>
+</nav>
     <div class="container" style="background-color: #B6DCE7;">
       <div class="row">
         <div class="col-4"></div>
@@ -209,6 +226,7 @@
 
 
             }
+            window.localStorage.setItem('Lista_clients', '[]');
             if (JSON.parse(window.localStorage.getItem('Lista_clients')) == null) {
                 window.localStorage.setItem('Lista_clients', '[]');
                 var a = JSON.parse(window.localStorage.getItem('Lista_clients'));
@@ -222,8 +240,8 @@
                 window.localStorage.setItem('Lista_clients', JSON.stringify(b));
             } 
             console.log(window.localStorage.getItem('Lista_clients'))
-            
-           window.location = 'Login_conta.html'
+            window.localStorage.setItem('Login', '1');
+           window.location = 'Pagina_inical.html'
         })
       })
     </script>
