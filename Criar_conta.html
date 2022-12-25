@@ -221,12 +221,13 @@
                 Nif: $("#Nif").val(),
                 Password1: $("#Password1").val(),
                 M_Pagamento: $("#M_Pagamento").val(),
-                Plano:"0",
+                Animais:[],
+                Plano:"0"
 
 
 
             }
-            window.localStorage.setItem('Lista_clients', '[]');
+            //window.localStorage.setItem('Lista_clients', '[]');
             if (JSON.parse(window.localStorage.getItem('Lista_clients')) == null) {
                 window.localStorage.setItem('Lista_clients', '[]');
                 var a = JSON.parse(window.localStorage.getItem('Lista_clients'));
@@ -239,8 +240,8 @@
                 b = a.concat([cadastro]);
                 window.localStorage.setItem('Lista_clients', JSON.stringify(b));
             } 
-            console.log(window.localStorage.getItem('Lista_clients'))
-            window.localStorage.setItem('Login', '1');
+            console.log(window.sessionStorage.getItem('Lista_clients'))
+            window.sessionStorage.setItem('Login',String( $("#Mail").val()));
            window.location = 'Pagina_inical.html'
         })
       })

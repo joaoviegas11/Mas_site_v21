@@ -29,15 +29,15 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <!-- ko if:(JSON.parse(window.sessionStorage.getItem('Login')) == null) -->
+              <!-- ko if:(window.sessionStorage.getItem('Login') == null) -->
               <a class="nav-link" aria-current="page" href="#">Perfil</a>
               <a class="nav-link" href="#">O Meu Animal</a>
               <a class="nav-link" href="#">Encomendar</a>
               <button type="button" class="btn btn-outline-primary btn-sm form-inline my-1 position-absolute d-flex" style="right:15px" onclick="window.location = 'Login_conta.html'">iniciar sessão</button>
             <!-- /ko -->
-            <!-- ko if:(JSON.parse(window.sessionStorage.getItem('Login')) != null) -->
-            <a class="nav-link" aria-current="page" href="#">Perfil</a>
-            <a class="nav-link" href="#">O Meu Animal</a>
+            <!-- ko if:(window.sessionStorage.getItem('Login') != null) -->
+            <a class="nav-link" aria-current="page" href="Perfil.html">Perfil</a>
+            <a class="nav-link" href="Animal.html">O Meu Animal</a>
             <a class="nav-link" href="Mas_compra.html">Encomendar</a>
           <!-- /ko -->
             </div>
@@ -71,7 +71,7 @@
 
 <script>
   modal=function(){
-console.log((JSON.parse(window.sessionStorage.getItem('Login'))))
+console.log((window.sessionStorage.getItem('Login')))
   }
 ko.applyBindings(new modal())
 </script>

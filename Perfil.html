@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PawFection</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Bungee' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src ="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src ="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src ="https://knockoutjs.com/downloads/knockout-3.5.1.debug.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+            body {
+                font-family: 'Bungee';font-size: 21px;
+            }
+    </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="Pagina_inical.html"><i class="fa-solid fa-paw"></i></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link" aria-current="page" href="Perfil.html">Perfil</a>
+                  <a class="nav-link" href="Animal.html">O Meu Animal</a>
+                  <a class="nav-link" href="Mas_compra.html">Encomendar</a>  
+                </div>
+              </div>
+            </nav>
+    <div class="container">
+        <div class="row mt-2">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+              <div class="card rounded-5">
+                <h3 style="text-align: center;" class="card-title"><strong>Perfil</strong></h3>
+                <div class="card-body" data-bind="with:Perfil">
+                 
+                    
+                  <div class="card-text">
+                    <div class="row"><h4 class="col-3">Nome:</h4><span class="col-5" data-bind="text:Nome"></span></div>
+                    <div class="row"><h4 class="col-3">Morada:</h4><span class="col-5" data-bind="text:Morada"></span></div>
+                    <div class="row"><h4 class="col-3">Nº de Animais:</h4><span class="col-5" data-bind="text:Animais.length"></span></div>
+                    <div class="row"><h4 class="col-3">Pagamendo:</h4><span class="col-5" data-bind="text:M_PagamentoA"></span></div>
+                    <div class="row"><h4 class="col-3">Plano:</h4><span class="col-5" data-bind="text:PlanoA"></span></div>
+                    
+                  </div>
+                 
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+    </div>
+            </div>
+       <script>
+      function  modal(){
+            self.Perfil=ko.observable()
+            self.PlanoA=ko.observable()
+            self.M_PagamentoA=ko.observable()
+            mail=window.sessionStorage.getItem('Login');
+            console.log(mail)
+            var array = JSON.parse(window.localStorage.getItem('Lista_clients'));
+            console.log(array);
+            for (let index = 0; index < array.length; index++) {
+                const element = array[index];
+                if(element.Mail==mail){
+                    self.Perfil(element);
+                    break
+                }
+            }
+            switch (self.Perfil().M_Pagamento) {
+                case "1":
+                self.M_PagamentoA("MBway");
+                    break;
+                    case "2":
+                self.M_PagamentoA("PayPal");
+                    break;
+                    case "3":
+                self.M_PagamentoA("Visa");
+                    break;
+            
+                default:
+                    self.M_PagamentoA("Erro");
+                    break;
+            }
+            switch (self.Perfil().Plano) {
+                case "1":
+                self.PlanoA("Bronze");
+                    break;
+                    case "2":
+                self.PlanoA("Silver");
+                    break;
+                    case "3":
+                self.PlanoA("Gold");
+                    break;
+            
+                default:
+                    self.PlanoA("Sem Plano");
+                    break;
+            }
+            console.log(self.Perfil());
+            console.log(self.PlanoA())
+        };
+        ko.applyBindings(new modal());
+       </script>
+</body>
+</html>
