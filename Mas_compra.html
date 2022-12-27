@@ -35,7 +35,7 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <a class="nav-link" aria-current="page" href="Perfil.html">Perfil</a>
-              <a class="nav-link" href="#">O Meu Animal</a>
+              <a class="nav-link" href="Animal.html">O Meu Animal</a>
               <a class="nav-link" href="Mas_compra.html">Encomendar</a>
               </div>
           </div>
@@ -55,7 +55,7 @@
                   </div>
                 </div> 
                 <div class="col-3">
-                    <button class="btn btn-primary" type="button" id="button-carrinho"   data-bs-toggle="modal" data-bs-target="#staticBackdrop">Carrinho<i class="fa fa-shopping-bag" aria-hidden="true"></i></button>
+                    <button class="btn btn-primary" type="button" id="button-carrinho"   data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Encomendas<i class="fa fa-shopping-bag" aria-hidden="true"></i></button>
                 </div>
                 
                 
@@ -105,11 +105,45 @@
       <h5>Total da compra:<span style="color: white;">i</span>
         <span data-bind="text:Total"></span>€</h5>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" data-bind="click:Compra"> Comprar</button> 
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" data-bind="click:Compra_emcomenda"> Comprar</button> 
         
       </div>
     </div>
-  </div>
+  </div></div>
+
+      <!-- Modal -->
+<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdrop2Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdrop2Label">Encomendas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div data-bind="foreach: { data: encomendas2, as: 'encomenda' }">
+            
+            <table class="table table-striped table-condensed">
+                <thead>
+                <tr><th>Nome</th><th>Preço</th></tr>
+                </thead>
+                <tbody data-bind="foreach:encomenda">
+                <tr>
+                <td data-bind="text: Name"></td>
+                <td ><span data-bind="text: Preco"></span>€</td>
+                </tr>
+                </tbody>
+       <tfoot>
+<tr><td>Estado:</td><td>Confirmação</td></tr>
+       </tfoot>
+            </table>
+       <hr>
+    </div>
+      
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+          
+      
+    </div>
+  </div></div>
     <script>     
     function cumpra_simples() {
         alert("Compra efetuada com sucesso!")
@@ -119,8 +153,9 @@
             var self=this;
 self.carrinho3 = [];
 self.Total=ko.observable(0);
-self.car = ko.observableArray();
+self.car = ko.observableArray([]);
 self.compras=ko.observableArray([]);
+self.encomendas2=ko.observableArray([]);
 self.pesquisa_str=ko.observable("")
 self.compraslist=[{
     Name:"ROYAL CANIN MAXI ADULT RAÇÃO PARA CÃES",
@@ -141,11 +176,81 @@ self.compraslist=[{
     Imagem:"https://www.tiendanimal.pt/dw/image/v2/BDLQ_PRD/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dwf30e3323/images/pienso_perros_royal_canin_adult_medium_ROY152036_M%20(2).jpg?sw=320&sh=320"
 },]
 self.compras(self.compraslist.concat([]))
-self.Compra=function(){
+var cliente1;
+var mail1=window.sessionStorage.getItem('Login');
+            
+            var array = JSON.parse(window.localStorage.getItem('Lista_clients'));
+            
+            for (let index = 0; index < array.length; index++) {
+                const element = array[index];
+                if(element.Mail==mail1){
+                  cliente1=element;
+                
+                    break
+                }
+            }
+self.encomendas2(cliente1.Encomendas);
+self.Compra_emcomenda=function(){
+   
     
+    self.adiciona_emcomenda(self.car())
     alert("Compra efetuada com sucesso!")
     location.reload()
+}
+self.Compra=function(){
+    let dic={}
+                dic["Name"]=this.Name
+                dic["Preco"]=this.Preço
+    var encomenda=[dic] 
+    self.adiciona_emcomenda(encomenda)
+    alert("Compra efetuada com sucesso!")
+    
+    location.reload()
 }   
+self.Compra=function(){
+    let dic={}
+                dic["Name"]=this.Name
+                dic["Preco"]=this.Preço
+    var encomenda=[dic] 
+    self.adiciona_emcomenda(encomenda)
+    alert("Compra efetuada com sucesso!")
+    
+    location.reload()
+}   
+self.adiciona_emcomenda= function(pedido){
+    var cliente;
+ var idd;
+var mail=window.sessionStorage.getItem('Login');
+            console.log(mail)
+            var array = JSON.parse(window.localStorage.getItem('Lista_clients'));
+            console.log(array);
+            for (let index = 0; index < array.length; index++) {
+                const element = array[index];
+                if(element.Mail==mail){
+                  cliente=element;
+                 idd=  array.indexOf(element);
+                    break
+                }
+            }
+            
+            
+            var Encomendas=cliente.Encomendas;
+            cliente.Encomendas=Encomendas.concat([pedido])
+            //cliente.Encomendas=[]
+            var listaDeClientes = JSON.parse(window.localStorage.getItem('Lista_clients'));
+            listaDeClientes[idd]=cliente;
+            console.log(1);
+            console.log(cliente)
+            console.log(2);
+            
+            console.log(idd)
+            console.log(3);
+            console.log(listaDeClientes)
+            window.localStorage.setItem('Lista_clients', JSON.stringify(listaDeClientes));
+
+console.log(4);
+console.log(JSON.parse(window.localStorage.getItem('Lista_clients')))
+}
 self.adiciona_carrinho = function() {
     console.log(0)
                 let dic={}
@@ -158,6 +263,7 @@ self.adiciona_carrinho = function() {
             
                   //  self.car["car"]=self.carrinho3 
                  }
+    
 self.removeCarrinho=function(){
     
     self.car.remove(this);
