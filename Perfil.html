@@ -60,12 +60,66 @@
             
           </div>
     </div>
+   <div class="row">
+    <div class="col-4" style="text-align: center;"></div> <div class="col-4"><a class="btn btn-primary btn-sm " href="" role="button">Ver Consultas</a>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Marcar Consultas
+      </button></div>
+   </div>
             </div>
+
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Marcar consulta</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Animal:
+          <select data-bind="options: animais,
+                             optionsText: 'Name',
+                             value: valor,
+                             optionsCaption: 'Choose...'"></select>
+      </p>
+        Data:<input type="datetime-local" name="data11" id="data11">
+        <div class="invalida d-none" style="color: red;">Data inválida</div>
+        <div class="invalida d-none" style="color: red;">Horário disponível:</div>
+        <div class="invalida d-none" style="color: red;">Dias úteis entre 8:00-18:59</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button data-bind="click:marcaConsulta" type="button" class="btn btn-primary">Marcar</button>
+      </div>
+    </div>
+  </div>
+</div>
        <script>
       function  modal(){
             self.Perfil=ko.observable()
             self.PlanoA=ko.observable()
             self.M_PagamentoA=ko.observable()
+            self.animais=ko.observableArray([])
+            self.valor=ko.observable();
+            self.marcaConsulta=function(){
+              
+              const hoje = new Date();
+              const diaMarcado = new Date($("#data11").val());
+              console.log(diaMarcado.getDay())
+              console.log(7<diaMarcado.getHours())
+              if(hoje<diaMarcado&&0<diaMarcado.getDay()&&diaMarcado.getDay()<6&&7<diaMarcado.getHours()&&diaMarcado.getHours()<19){
+                alert("Consulta Marcada");
+                window.location="Perfil.html";
+              }else{
+                $(".invalida").removeClass("d-none");
+              }
+            }
             mail=window.sessionStorage.getItem('Login');
             console.log(mail)
             var array = JSON.parse(window.localStorage.getItem('Lista_clients'));
@@ -77,6 +131,13 @@
                     break
                 }
             }
+            for (let index = 0; index < self.Perfil().Animais.length; index++) {
+              const element = self.Perfil().Animais[index];
+              console.log(1);
+              console.log(element);
+              self.animais.push({Name:element.Nome,Vale:element.Nome});
+            }
+            console.log(self.animais())
             switch (self.Perfil().M_Pagamento) {
                 case "1":
                 self.M_PagamentoA("MBway");
@@ -111,6 +172,7 @@
             console.log(self.PlanoA())
         };
         ko.applyBindings(new modal());
+
        </script>
 </body>
 </html>
