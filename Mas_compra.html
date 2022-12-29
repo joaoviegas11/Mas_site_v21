@@ -43,7 +43,7 @@
     </nav>
     <div class="container " style="background-color: #B6DCE7;">
         
-        <div class="row align-items-start" style="background-color: #B6DCE7;">
+        <div class="row align-items-start" style="background-color: #B6DCE7; margin-top: 70px;">
             <div class="  mt-2"></div>
             <div class="col-2" data-bind="if:car().length>0">
                 <button class="btn btn-danger" type="button" id="button-carrinho"   data-bs-toggle="modal" data-bs-target="#staticBackdrop">Carrinho<i class="fa fa-shopping-basket" aria-hidden="true"></i></button>
@@ -59,7 +59,7 @@
                 </div>
                 
                 
-            </div>
+        </div>
         <div class="row align-items-start  mt-5" data-bind="foreach:compras">    
             <div class="col-4 mb-3">
                 <div class="card" style="width: 18rem;" >
@@ -69,7 +69,7 @@
                         
                         <p style="text-align: center;font-size: x-large;" data-bind="text:Name"></p>
                         <p style="text-align: center;font-size: large;" data-bind="text:Preço">€</p>
-                        <p class="card-text" style="text-align: center;">  <input class="btn btn-primary  btn-lg" type="button" value="Comprar" data-bind="click:$parent.Compra" > </p>
+                        <p class="card-text" style="text-align: center;">  <input class="btn btn-outline-primary  btn-lg" type="button" value="Comprar" data-bind="click:$parent.Compra" > </p>
                         <p class="card-text" style="text-align: center;">  <input class="btn btn-primary"
                               type="button" value="Adicionar ao carrinho" data-bind="attr:{'id':Name+'_'+Preço},click:$parent.adiciona_carrinho"> </p>
                    </div>
@@ -158,22 +158,54 @@ self.compras=ko.observableArray([]);
 self.encomendas2=ko.observableArray([]);
 self.pesquisa_str=ko.observable("")
 self.compraslist=[{
-    Name:"ROYAL CANIN MAXI ADULT RAÇÃO PARA CÃES",
+    Name:"ROYAL CANIN MAXI ADULT nutricion PARA CÃES (10kg)",
     Preço:62.69,
     Imagem:"https://www.tiendanimal.pt/dw/image/v2/BDLQ_PRD/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dw5bc9bb3c/images/pienso_perros_royal_canin_maxi_adult_ROY153637_M.jpg?sw=320&sh=320"
 
 },{
-    Name:"Criadores Dietetic Hipoalergénico ROYAL cães",
+    Name:"Criadores Hipoalergénico para cães (2kg)",
     Preço:12.95,
     Imagem:"https://www.tiendanimal.pt/dw/image/v2/BDLQ_PRD/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dw81f2baf4/images/pienso_perros_criadores_dietetic_hipoalergenico_sin_cereales_CRD4207_M.jpg?sw=320&sh=320"
 },{
-    Name:"Taste of the Wild Pacific Stream Salmão ração para cães",
+    Name:"Taste of the Wild Pacific Stream para cães (2kg)",
     Preço:15.49,
     Imagem:"https://www.tiendanimal.pt/dw/image/v2/BDLQ_PRD/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dw21dfe8da/images/pienso_perros_taste_of_the_wild_pacific_stream_salmon_TAS74198609581_M.jpg?sw=320&sh=320"
 },{
-    Name:"ROYAL Canin Adult Medium ração para cães",
+    Name:"ROYAL Canin Adult Medium para cães (5kg)",
     Preço:24.19,
     Imagem:"https://www.tiendanimal.pt/dw/image/v2/BDLQ_PRD/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dwf30e3323/images/pienso_perros_royal_canin_adult_medium_ROY152036_M%20(2).jpg?sw=320&sh=320"
+},{
+    Name: "Royal Canin Sterilised para gatos (10kg)",
+    Preço: 63.79,
+    Imagem: "https://www.tiendanimal.pt/dw/image/v2/BDLQ_PRD/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dw481c63ec/images/comida_gatos_royal_canin_regular_sterilised_52722_M_1.jpg?sw=528&sh=528"
+},{
+    Name: "purina Pro plan adult sterilised para gatos (10kg)",
+    Preço: 60.90,
+    Imagem: "https://www.tiendanimal.pt/dw/image/v2/BDLQ_PRD/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dwf9bc52a9/images/comida_gatos_purina_cat_purina_pro_plan_adult_sterilised_pavo_PRO12171894_M.jpg?sw=528&sh=528"
+},{
+    Name: "catzilla grain chicken para gatos (6kg)",
+    Preço: 36.95,
+    Imagem:"https://www.tiendanimal.pt/dw/image/v2/BDLQ_PRD/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dw0d2ef43e/images/comida_gatos_catzilla_grain_free_pollo_CTZ33025_M.jpg?sw=780&sh=780&q=85"
+},{
+    Name:"Salvaje adult chicken para gatos (1.5kg)",
+    Preço: 7.95,
+    Imagem:"https://www.tiendanimal.pt/dw/image/v2/BDLQ_PRD/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dw5a1677d7/images/pienso_gatos_salvaje_adulto_pollo_SAJ41980_M.jpg?sw=780&sh=780&q=85"
+},{
+    Name:"Criadores snack chicken stick para cães (500g)",
+    Preço: 6.69,
+    Imagem: "https://www.tiendanimal.pt/dw/image/v2/BDLQ_PRD/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dw04c3fdad/images/snacks_perro_Criadores_snack_stick_dental_de_pollo_para_perros_CRD12662.jpg?sw=780&sh=780&q=85"
+},{
+    Name:"Salvaje adult chicken patê para cães (400g)",
+    Preço: 1.99,
+    Imagem:"https://www.tiendanimal.pt/dw/image/v2/BDLQ_PRD/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dwfda72ef8/images/pate_perros_salvaje_adulto_pollo_atun_SAJ40661_M.jpg?sw=780&sh=780&q=85"
+},{
+    Name:"Gimborn Malt-solf extra para gatos (200g)",
+    Preço: 13.39,
+    Imagem:"https://www.tiendanimal.pt/dw/image/v2/BDLQ_PRD/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dwf9ac60b6/images/comida_gatos_gimpet_malta_hurones_GIM68696_M_nuevoformato.jpg?sw=780&sh=780&q=85"
+},{
+    Name:"Advance Snack Hypoallergenic biscuits (150g)",
+    Preço: 3.29,
+    Imagem:"https://www.tiendanimal.pt/dw/image/v2/BDLQ_PRD/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dw802a760f/images/snack_perros_affinity_advance_hypoallegrenic_ADV922710_M.jpg?sw=780&sh=780&q=85"
 },]
 self.compras(self.compraslist.concat([]))
 var cliente1;
