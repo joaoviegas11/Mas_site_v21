@@ -57,13 +57,33 @@
     </div>
     <div class="container">
         <div class="row align-items-start  mt-5">
+             <div class="col-4">
+                <div class="card" style="background-color: #D9D9D9; border: 2px solid #DC6735; width: 300px; height: 450px; margin: auto;">
+                    <img src="https://thumbs.dreamstime.com/b/blank-silver-medal-ribbon-d-red-illustration-39816829.jpg" class="card-img-top" alt="img">
+                    <div class="card-body">
+                        <h3 style="background-color: #DC6735; color: white; text-align: center; width: 100%">BRONZE</h3>
+                        <h3 style="text-align:center;"> <input style="border: 0px; " class="btn btn-primary btn-lg" type="button" value="Benefícios" data-bs-toggle="modal" data-bs-target="#exampleModal2"></h3>
+                        <!-- ko if:PlanoA()!='1'-->
+                        <h3 style="text-align:center;">  <button class="btn btn-outline-success btn-lg " id="1" data-bind="click:mudarPlano">subscrever</button></h3>
+                        <!-- /ko -->
+                        <!-- ko if:PlanoA()=='1'-->
+                        <h3 style="text-align:center;">  <button class="btn btn-outline-success btn-lg " id="1" data-bind="click:mudarPlano">Cancelar</button></h3>
+                        <!-- /ko -->
+                    </div>
+                </div>
+            </div>
             <div class="col-4">
                 <div class="card" style="background-color: #D9D9D9; border: 2px solid #80896E; width:300px; height:450px; margin: auto;">
                     <img src="https://thumbs.dreamstime.com/b/blank-silver-medal-ribbon-d-red-illustration-39816829.jpg" class="card-img-top" alt="img">
                     <div class="card-body">
                         <h3 style="background-color:#80896E; color: white; text-align:center; width:100%">SILVER</h3>
                         <h3 style="text-align:center;"> <input style="border: 0px; " class="btn btn-primary btn-lg" type="button" value="Benefícios" data-bs-toggle="modal" data-bs-target="#exampleModal"></h3>
+                        <!-- ko if:PlanoA()!='2'-->
                         <h3 style="text-align:center;">  <button class="btn btn-outline-success btn-lg " id="2" data-bind="click:mudarPlano">subscrever</button></h3>
+                        <!-- /ko -->
+                        <!-- ko if:PlanoA()=='2'-->
+                        <h3 style="text-align:center;">  <button class="btn btn-outline-success btn-lg " id="2" data-bind="click:mudarPlano">Cancelar</button></h3>
+                        <!-- /ko -->
                     </div>
                 </div>
             </div>
@@ -73,17 +93,12 @@
                     <div class="card-body">
                         <h3 style="background-color: #E4A400; color: white; text-align: center; width: 100%">GOLD</h3>
                         <h3 style="text-align:center;"> <input style="border: 0px; " class="btn btn-primary btn-lg" type="button" value="Benefícios" data-bs-toggle="modal" data-bs-target="#exampleModal1"></h3>
+                        <!-- ko if:PlanoA()!='3'-->
                         <h3 style="text-align:center;">  <button class="btn btn-outline-success btn-lg " id="3" data-bind="click:mudarPlano">subscrever</button></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card" style="background-color: #D9D9D9; border: 2px solid #DC6735; width: 300px; height: 450px; margin: auto;">
-                    <img src="https://thumbs.dreamstime.com/b/blank-silver-medal-ribbon-d-red-illustration-39816829.jpg" class="card-img-top" alt="img">
-                    <div class="card-body">
-                        <h3 style="background-color: #DC6735; color: white; text-align: center; width: 100%">BRONZE</h3>
-                        <h3 style="text-align:center;"> <input style="border: 0px; " class="btn btn-primary btn-lg" type="button" value="Benefícios" data-bs-toggle="modal" data-bs-target="#exampleModal2"></h3>
-                        <h3 style="text-align:center;">  <button class="btn btn-outline-success btn-lg " id="1" data-bind="click:mudarPlano">subscrever</button></h3>
+                        <!-- /ko -->
+                        <!-- ko if:PlanoA()=='3'-->
+                        <h3 style="text-align:center;">  <button class="btn btn-outline-success btn-lg " id="3" data-bind="click:mudarPlano">Cancelar</button></h3>
+                        <!-- /ko -->
                     </div>
                 </div>
             </div>

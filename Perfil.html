@@ -62,7 +62,7 @@
 
   <div class="col-2" style="margin: auto;">   
     <div class="col-10">
-      <a class="btn btn-outline-secondary" href="" role="button" style="margin-bottom:20px">As minhas consultas</a>
+      <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" role="button" style="margin-bottom:20px">As minhas consultas</button>
       <button style="margin-bottom:20px" type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Marcar nova consulta
       </button>
@@ -94,7 +94,7 @@
                              value: valor,
                              optionsCaption: 'Choose...'"></select>
       </p>
-        Data:<input type="datetime-local" name="data11" id="data11">
+        Data:<input data-bind="textInput:dataC" type="datetime-local" name="data11" id="data11">
         <div class="invalida d-none" style="color: red;">Data inválida</div>
         <div class="invalida d-none" style="color: red;">Horário disponível:</div>
         <div class="invalida d-none" style="color: red;">Dias úteis entre 8:00-18:59</div>
@@ -106,6 +106,37 @@
     </div>
   </div>
 </div>
+
+     <!-- Modal -->
+     <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdrop2Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdrop2Label">Consultas</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <div >
+              
+              <table class="table table-striped table-condensed">
+                  <thead>
+                  <tr><th>Animal</th><th>Data</th></tr>
+                  </thead>
+                  <tbody data-bind="foreach:consultas">
+                  <tr>
+                  <td data-bind="text: Animal"></td>
+                  <td ><span data-bind="text: Data.replace('T',' ')"></span></td>
+                  </tr>
+                  </tbody>
+              </table>
+         <hr>
+      </div>
+        
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+            
+        
+      </div>
+    </div></div>
        <script>
       function  modal(){
             self.Perfil=ko.observable()
@@ -113,6 +144,44 @@
             self.M_PagamentoA=ko.observable()
             self.animais=ko.observableArray([])
             self.valor=ko.observable();
+            self.dataC=ko.observable();
+            self.consultas=ko.observableArray([]);
+            
+            self.adiciona_consulta= function(pedido){
+    var cliente;
+ var idd;
+var mail=window.sessionStorage.getItem('Login');
+            console.log(mail)
+            var array = JSON.parse(window.localStorage.getItem('Lista_clients'));
+            console.log(array);
+            for (let index = 0; index < array.length; index++) {
+                const element = array[index];
+                if(element.Mail==mail){
+                  cliente=element;
+                 idd=  array.indexOf(element);
+                    break
+                }
+            }
+            
+            //cliente.Consultas=[]
+            var consulta2=cliente.Consultas;
+            cliente.Consultas=consulta2.concat([pedido])
+            //cliente.consulta2=[]
+            var listaDeClientes = JSON.parse(window.localStorage.getItem('Lista_clients'));
+            listaDeClientes[idd]=cliente;
+            console.log(1);
+            console.log(cliente)
+            console.log(2);
+            
+            console.log(idd)
+            console.log(3);
+            console.log(listaDeClientes)
+            window.localStorage.setItem('Lista_clients', JSON.stringify(listaDeClientes));
+
+console.log(4);
+console.log(JSON.parse(window.localStorage.getItem('Lista_clients')))
+}
+
             self.marcaConsulta=function(){
               
               const hoje = new Date();
@@ -120,6 +189,13 @@
               console.log(diaMarcado.getDay())
               console.log(7<diaMarcado.getHours())
               if(hoje<diaMarcado&&0<diaMarcado.getDay()&&diaMarcado.getDay()<6&&7<diaMarcado.getHours()&&diaMarcado.getHours()<19){
+                    let dic={}
+                dic["Animal"]=self.valor().Name
+                dic["Data"]=self.dataC()
+    console.log(11);
+    console.log(dic);    
+    
+    self.adiciona_consulta(dic);
                 alert("Consulta Marcada");
                 window.location="Perfil.html";
               }else{
@@ -137,6 +213,9 @@
                     break
                 }
             }
+            self.consultas(self.Perfil().Consultas);
+
+
             for (let index = 0; index < self.Perfil().Animais.length; index++) {
               const element = self.Perfil().Animais[index];
               console.log(1);
