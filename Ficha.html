@@ -20,7 +20,7 @@
     <title>PawFection</title>
     <style>
         body {
-            font-family: "Open Sans",Verdana, Tahoma, sans-serif;
+            font-family: Bungee;
         }
     </style>
 </head>
@@ -40,60 +40,62 @@
             </div>
         </div>
     </nav>
-    <div class="container" style="background-color: #FFF0DB; border-radius: 25px; width:600px; margin-top: 8px;">
-        <h1>FICHA MÉDICA</h1>
+    <div class="container" style="background-color: #fcf1da; border-radius: 25px; width:1500px; margin-top: 40px; margin-bottom: 15px; padding: 10px ;">
+        <h1 style="font-size: 50px; margin: auto;">FICHA MÉDICA</h1>
     </div>
     <div class="container" style="background-color: #FFFFFF; border-radius: 25px;">
+        <div style="padding: 35px;">
         <form style="text-align:right;">
-            <div class="col-12" style="border-bottom: solid 1px black;">
+            <div class="col-12" style="border-bottom: solid 1px rgb(168, 168, 168);">
                 <h4 style="text-align:left;">Estado Físico</h4>
-                <input type="checkbox" id="physical1" name="physical1" value="Normal">
-                <label for="physical1">NORMAL</label>
-                <input type="checkbox" id="physical2" name="physical2" value="ExtremidadesFrias">
-                <label for="physical2">EXTREMIDADES FRIAS</label>
-                <input type="checkbox" id="physical3" name="physical3" value="Geboso">
+                <input type="checkbox" id="physical1" name="physical1" value="Normal" style="width:20px ; height:20px" >
+                <label for="physical1" style="margin-right: 25px;">NORMAL</label>
+                <input type="checkbox" id="physical2" name="physical2" value="ExtremidadesFrias" style="width:20px ; height:20px">
+                <label for="physical2" style="margin-right: 25px;" >EXTREMIDADES FRIAS</label>
+                <input type="checkbox" id="physical3" name="physical3" value="Geboso" style="width:20px ; height:20px">
                 <label for="physical3">GEBOSO</label>
             </div>
-            <div class="col-12" style="border-bottom: solid 1px black;">
-                <h4 style="text-align:left;">Estado do Pelo</h4>
-                <input type="checkbox" id="fur1" name="fur1" value="Excelente">
-                <label for="fur1">EXCELENTE</label>
-                <input type="checkbox" id="fur2" name="fur2" value="Bom">
-                <label for="fur2">BOM</label>
-                <input type="checkbox" id="fur3" name="fur3" value="Suficiente">
-                <label for="fur3">SUFICIENTE</label>
-                <input type="checkbox" id="fur4" name="fur4" value="Mau">
+            <div class="col-12" style="border-bottom: solid 1px rgb(168, 168, 168);">
+                <h4 style="text-align:left; margin-top: 5px;">Estado do Pelo</h4>
+                <input type="checkbox" id="fur1" name="fur1" value="Excelente" style="width:20px ; height:20px">
+                <label for="fur1" style="margin-right: 25px;">EXCELENTE</label>
+                <input type="checkbox" id="fur2" name="fur2" value="Bom" style="width:20px ; height:20px">
+                <label for="fur2" style="margin-right: 25px;">BOM</label>
+                <input type="checkbox" id="fur3" name="fur3" value="Suficiente" style="width:20px ; height:20px">
+                <label for="fur3" style="margin-right: 25px;">SUFICIENTE</label>
+                <input type="checkbox" id="fur4" name="fur4" value="Mau" style="width:20px ; height:20px">
                 <label for="fur4">MAU</label>
             </div>
-            <div class="col-12" style="border-bottom: solid 1px black;">
-                <h4 style="text-align:left;">Peso</h4>
-                <input type="text" name="weigth" placeholder="XX,XX" />kg
+            <div class="col-12" style="border-bottom: solid 1px rgb(168, 168, 168);">
+                <h4 style="text-align:left; margin-top: 5px;">Peso</h4>
+                <input type="text" name="weigth" placeholder="XX,XX" style="width:87px; margin-right: 5px; border: 0px;"/>kg
                 <label for="weigth"></label>
             </div>
-            <div class="col-12" style="border-bottom: solid 1px black;">
-                <h4 style="text-align:left;">Vacinação</h4>
-                <input type="text" name="vaccination" />
+            <div class="col-12" style="border-bottom: solid 1px rgb(168, 168, 168);">
+                <h4 style="text-align:left; margin-top: 5px;">Vacinação</h4>
+                <input type="text" name="vaccination" style="margin-bottom: 5px;" />
                 <label for="vaccination"></label>
             </div>
-            <div class="col-12" style="border-bottom: solid 1px black;">
-                <h4 style="text-align:left;">Hidratação</h4>
-                <input type="checkbox" id="hydratation1" name="hydratation1" value="Hidratado">
-                <label for="hydratation1">HIDRATADO</label>
-                <input type="checkbox" id="hydratation2" name="hydrataion2" value="Semi-Hidratado">
-                <label for="hydratation2">SEMI-HIDRATADO</label>
-                <input type="checkbox" id="hydratation3" name="hydratation3" value="Desidratado">
+            <div class="col-12" style="border-bottom: solid 1px rgb(168, 168, 168);">
+                <h4 style="text-align:left; margin-top: 5px;">Hidratação</h4>
+                <input type="checkbox" id="hydratation1" name="hydratation1" value="Hidratado" style="width:20px; height:20px;">
+                <label for="hydratation1" style="margin-right: 25px;">HIDRATADO</label>
+                <input type="checkbox" id="hydratation2" name="hydrataion2" value="Semi-Hidratado" style="width:20px ; height:20px">
+                <label for="hydratation2" style="margin-right: 25px;">SEMI-HIDRATADO</label>
+                <input type="checkbox" id="hydratation3" name="hydratation3" value="Desidratado" style="width:20px ; height:20px">
                 <label for="hydratation3">DESIDRATADO</label>
             </div>
             <div class="col-12">
-                <h4 style="text-align:left;">Atitude Geral</h4>
-                <input type="checkbox" id="atitude1" name="atitude1" value="Normal">
-                <label for="atitude1">NORMAL</label>
-                <input type="checkbox" id="atitude2" name="atitude2" value="Apático">
-                <label for="atitude2">APÁTICO</label>
-                <input type="checkbox" id="atitude3" name="atitude3" value="Hiperestético">
+                <h4 style="text-align:left; margin-top: 5px;">Atitude Geral</h4>
+                <input type="checkbox" id="atitude1" name="atitude1" value="Normal" style="width:20px ; height:20px">
+                <label for="atitude1" style="margin-right: 25px;">NORMAL</label>
+                <input type="checkbox" id="atitude2" name="atitude2" value="Apático" style="width:20px ; height:20px">
+                <label for="atitude2" style="margin-right: 25px;">APÁTICO</label>
+                <input type="checkbox" id="atitude3" name="atitude3" value="Hiperestético" style="width:20px ; height:20px">
                 <label for="atitude3">HIPERESTÉTICO</label>
             </div>
         </form>
+    </div>
     </div>
 </body>
 </html>
