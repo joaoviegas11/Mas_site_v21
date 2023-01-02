@@ -45,10 +45,10 @@
         
         <div class="row align-items-start" style="background-color: #B6DCE7; margin-top: 70px;">
             <div class="  mt-2"></div>
-            <div class="col-2" data-bind="if:car().length>0">
+            <div class="col-3 " data-bind="if:car().length>0" style="display: flex; justify-content:space-around">
                 <button class="btn btn-danger" type="button" id="button-carrinho"   data-bs-toggle="modal" data-bs-target="#staticBackdrop">Carrinho<i class="fa fa-shopping-basket" aria-hidden="true"></i></button>
             </div>
-            <div class="col-7"> 
+            <div class="col-6"> 
                 <div class="input-group mb-3">
                     <input type="text" data-bind="textInput:pesquisa_str" class="form-control" placeholder="Nome do produto" aria-label="Recipient's username" aria-describedby="button-addon2">
                     <button class="btn btn-secondary" type="button" id="button-addon2" data-bind="click:filtrar">Pesquisar</button>
