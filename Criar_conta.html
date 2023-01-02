@@ -43,27 +43,27 @@
       <div class="row">
         <div class="input-group mt-3">
             <span class="input-group-text" id="Nome1">Nome completo</span>
-            <input type="text" class="form-control" id="Nome" placeholder="" aria-label="Username" aria-describedby="Nome1">
+            <input value="" type="text" class="form-control" id="Nome" placeholder="" aria-label="Username" aria-describedby="Nome1">
           </div>
           <div class="input-group mt-1">
             <span class="input-group-text" id="Mail1">Email</span>
-            <input type="text" class="form-control" id="Mail" placeholder="" aria-label="Username" aria-describedby="Mail1">
+            <input value="" type="text" class="form-control" id="Mail" placeholder="" aria-label="Username" aria-describedby="Mail1">
           </div>
           <div class="input-group mt-1">
             <span class="input-group-text" id="Morada1">Morada</span>
-            <input type="text" class="form-control" id="Morada" placeholder="" aria-label="Username" aria-describedby="Morada1">
+            <input value="" type="text" class="form-control" id="Morada" placeholder="" aria-label="Username" aria-describedby="Morada1">
           </div>
           <div class="input-group mt-1">
             <span class="input-group-text" id="Nif1">Nif</span>
-            <input type="text" class="form-control" id="Nif" placeholder="" aria-label="Username" aria-describedby="Nif1">
+            <input value="" type="text" class="form-control" id="Nif" placeholder="" aria-label="Username" aria-describedby="Nif1">
           </div>
           <div class="input-group mt-1">
             <span class="input-group-text" id="Password11">Password</span>
-            <input type="password" class="form-control" id="Password1" placeholder="" aria-label="Username" aria-describedby="Password11">
+            <input value="" type="password" class="form-control" id="Password1" placeholder="" aria-label="Username" aria-describedby="Password11">
           </div>
           <div class="input-group mt-1">
             <span class="input-group-text" id="ConfirmarPassword11">Confirmar password</span>
-            <input type="password" class="form-control" id="Password1" placeholder="" aria-label="Username" aria-describedby="ConfirmarPassword11">
+            <input value="" type="password" class="form-control" id="Password2" placeholder="" aria-label="Username" aria-describedby="ConfirmarPassword11">
           </div>
       </div>
             <select class="form-select mt-1" id="M_Pagamento">
@@ -194,7 +194,10 @@
           }
         })
         $("#Button_Criar_Conta").click(function () {
-
+          if( $("#Password1").val()!= $("#Password2").val()){
+            alert("Password é diferente da sua confirmação.")
+            return
+          }
 
 
             let cadastro = {

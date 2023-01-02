@@ -68,7 +68,7 @@
                     <div class="card-body">
                         
                         <p style="text-align: center;font-size: x-large;" data-bind="text:Name"></p>
-                        <p style="text-align: center;font-size: large;" data-bind="text:Preço">€</p>
+                        <p style="text-align: center;font-size: large;" ><span data-bind="text:Preço"></span>€</p> 
                         <p class="card-text" style="text-align: center;">  <input class="btn btn-outline-primary  btn-lg" type="button" value="Comprar" data-bind="click:$parent.Compra" > </p>
                         <p class="card-text" style="text-align: center;">  <input class="btn btn-primary"
                               type="button" value="Adicionar ao carrinho" data-bind="attr:{'id':Name+'_'+Preço},click:$parent.adiciona_carrinho"> </p>
