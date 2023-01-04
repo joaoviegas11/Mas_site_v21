@@ -53,6 +53,12 @@
               <h5 class="card-text">Password</h5>
               <input type="password" class="form-control" name="" id="L_Pass" placeholder="password">
               <p class="card-text mt-3" style="text-align: center;"> <input id="Button_Login_Conta" class="btn btn-outline-secondary  btn-lg" type="button" value="LOGIN"> </p>
+              <div class="mb-1 d-none" id="Emailinvalido">
+                <span class="text-danger ">Email inválido</span>
+                  </div>
+                  <div class="mb-1 d-none" id="Passwordinvalido">
+                    <span class="text-danger ">Password inválida</span>
+                    </div>
               <p style="text-align: center;">
                Não tem Conta? <a href="Criar_conta.html" >Criar Conta</a>
               </p>
@@ -72,19 +78,26 @@
     lista=JSON.parse(window.localStorage.getItem('Lista_clients'))
       for (let index = 0; index < lista.length; index++) {
         const dicionario = lista[index];
+        
         if(dicionario.Mail==$("#L_Mail").val())
-        {
+        {$('#Emailinvalido').addClass('d-none');
+          
           if(dicionario.Password1==$("#L_Pass").val())
-        {
+        {$('#Emailinvalido').addClass('d-none');
+        $('#Passwordinvalido').addClass('d-none');
           alert("Login efetuado com sucesso!")
         
                 window.sessionStorage.setItem('Login', String(dicionario.Mail));
-                 
-            
-            console.log()
+              
             
           window.location = 'Pagina_inical.html'
+          return
+        }else{
+          $('#Passwordinvalido').removeClass('d-none');
+          return
         }
+        }else{
+          $('#Emailinvalido').removeClass('d-none');
         }
       }
     })
