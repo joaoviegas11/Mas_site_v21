@@ -1,0 +1,833 @@
+{
+  "id": "d36dfc09-e7a8-4d42-9a30-43e8fc00a65c",
+  "version": "2.0",
+  "name": "testes",
+  "url": "https://joaoviegas11.github.io/",
+  "tests": [{
+    "id": "54bc5a90-c0c7-44b7-9391-1ab8c76eec63",
+    "name": "Criar conta",
+    "commands": [{
+      "id": "3792acb4-4dfa-446d-af6a-d9cdf6545035",
+      "comment": "",
+      "command": "open",
+      "target": "/Mas_site_v21/Pagina_inical.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "024764a6-b28d-4902-818e-fb515b5d25cb",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1200x800",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "90877d42-a635-4497-887f-fb729f7702e1",
+      "comment": "",
+      "command": "if",
+      "target": "window.sessionStorage.getItem('Login') != null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ea086a82-303a-487e-9219-222f39b7592a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='navbarNavAltMarkup']/div/button", "xpath:idRelative"],
+        ["xpath=//div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'iniciar sessão')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e2faf1dd-fd0d-4335-964b-381038008b5a",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5b38f199-4217-4053-ba66-d8f30173aa4d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='navbarNavAltMarkup']/div/button", "xpath:idRelative"],
+        ["xpath=//div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'iniciar sessão')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "29139f6a-4b76-4fd9-acb4-9ca5870d6529",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Criar Conta",
+      "targets": [
+        ["linkText=Criar Conta", "linkText"],
+        ["css=p > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Criar Conta')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Criar_conta.html')]", "xpath:href"],
+        ["xpath=//p[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Criar Conta')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7fa4d2fc-55cf-4139-a5bb-63a598a2ea1f",
+      "comment": "",
+      "command": "type",
+      "target": "id=Nome",
+      "targets": [
+        ["id=Nome", "id"],
+        ["css=#Nome", "css:finder"],
+        ["xpath=//input[@id='Nome']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Paulo silva"
+    }, {
+      "id": "4e29f8f6-3b24-42e8-87ee-ce46b25d3fa9",
+      "comment": "",
+      "command": "type",
+      "target": "id=Mail",
+      "targets": [
+        ["id=Mail", "id"],
+        ["css=#Mail", "css:finder"],
+        ["xpath=//input[@id='Mail']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "paulosilva@gmail.com"
+    }, {
+      "id": "03405761-630d-4ade-ab5f-64815e031067",
+      "comment": "",
+      "command": "type",
+      "target": "id=Morada",
+      "targets": [
+        ["id=Morada", "id"],
+        ["css=#Morada", "css:finder"],
+        ["xpath=//input[@id='Morada']", "xpath:attributes"],
+        ["xpath=//div[6]/input", "xpath:position"]
+      ],
+      "value": "Rua averio"
+    }, {
+      "id": "f15f60d9-eedf-4549-8512-70480b774d9a",
+      "comment": "",
+      "command": "type",
+      "target": "id=Nif",
+      "targets": [
+        ["id=Nif", "id"],
+        ["css=#Nif", "css:finder"],
+        ["xpath=//input[@id='Nif']", "xpath:attributes"],
+        ["xpath=//div[8]/input", "xpath:position"]
+      ],
+      "value": "24351267"
+    }, {
+      "id": "74d4a643-75cb-423a-a583-6fa3008ca661",
+      "comment": "",
+      "command": "type",
+      "target": "id=Password1",
+      "targets": [
+        ["id=Password1", "id"],
+        ["css=#Password1", "css:finder"],
+        ["xpath=//input[@id='Password1']", "xpath:attributes"],
+        ["xpath=//div[10]/input", "xpath:position"]
+      ],
+      "value": "12345"
+    }, {
+      "id": "d18a3b9e-bb3c-446a-99eb-f40c6c755f00",
+      "comment": "",
+      "command": "type",
+      "target": "id=Password2",
+      "targets": [
+        ["id=Password2", "id"],
+        ["css=#Password2", "css:finder"],
+        ["xpath=//input[@id='Password2']", "xpath:attributes"],
+        ["xpath=//div[12]/input", "xpath:position"]
+      ],
+      "value": "12345"
+    }, {
+      "id": "13894b50-f7c8-449f-b0e9-76b8e96c3f2b",
+      "comment": "",
+      "command": "select",
+      "target": "id=M_Pagamento",
+      "targets": [],
+      "value": "label=PayPal"
+    }, {
+      "id": "014d38bd-4c38-4cff-b16b-be87e906ff59",
+      "comment": "",
+      "command": "type",
+      "target": "css=#selt2 input",
+      "targets": [
+        ["css=#selt2 input", "css:finder"],
+        ["xpath=(//input[@value=''])[8]", "xpath:attributes"],
+        ["xpath=//div[@id='selt2']/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "963623721"
+    }, {
+      "id": "ca061d2c-1632-4afe-88db-cfc5e241db58",
+      "comment": "",
+      "command": "click",
+      "target": "id=Button_Criar_Conta",
+      "targets": [
+        ["id=Button_Criar_Conta", "id"],
+        ["css=#Button_Criar_Conta", "css:finder"],
+        ["xpath=//input[@id='Button_Criar_Conta']", "xpath:attributes"],
+        ["xpath=//p/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "e241aeaf-482b-435a-ae22-bd615aff6e04",
+    "name": "Autenticação",
+    "commands": [{
+      "id": "b55a754e-efc2-4e13-809d-9645db1eda61",
+      "comment": "",
+      "command": "open",
+      "target": "Mas_site_v21/Pagina_inical.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "80b5e8c7-9548-4ed5-9c96-38252198931c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1200x800",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7ef65d44-07a7-43a8-b386-fab4c66ff80c",
+      "comment": "",
+      "command": "if",
+      "target": "window.sessionStorage.getItem('Login') != null",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4c60dbaf-197c-4991-ad3c-791b39af44be",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='navbarNavAltMarkup']/div/button", "xpath:idRelative"],
+        ["xpath=//div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'iniciar sessão')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8839671b-1931-4ae6-8eaf-7c006097c854",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5d315c11-a14c-43f0-835f-ab113f5ad139",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='navbarNavAltMarkup']/div/button", "xpath:idRelative"],
+        ["xpath=//div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'iniciar sessão')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0bfe26ec-3839-4bcf-a480-5f0716cf6dc5",
+      "comment": "",
+      "command": "click",
+      "target": "id=L_Mail",
+      "targets": [
+        ["id=L_Mail", "id"],
+        ["css=#L_Mail", "css:finder"],
+        ["xpath=//input[@id='L_Mail']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e03ef7b4-f8a0-4ca3-ae8a-97baa512c748",
+      "comment": "",
+      "command": "type",
+      "target": "id=L_Mail",
+      "targets": [
+        ["id=L_Mail", "id"],
+        ["css=#L_Mail", "css:finder"],
+        ["xpath=//input[@id='L_Mail']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "paulosilva@gmail.com"
+    }, {
+      "id": "2662cf6a-73cb-4460-9a18-3f815dff9c49",
+      "comment": "",
+      "command": "click",
+      "target": "id=L_Pass",
+      "targets": [
+        ["id=L_Pass", "id"],
+        ["css=#L_Pass", "css:finder"],
+        ["xpath=//input[@id='L_Pass']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ee99f79-c665-4009-b24f-039efa7e0009",
+      "comment": "",
+      "command": "type",
+      "target": "id=L_Pass",
+      "targets": [
+        ["id=L_Pass", "id"],
+        ["css=#L_Pass", "css:finder"],
+        ["xpath=//input[@id='L_Pass']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "12345"
+    }, {
+      "id": "41d73941-aed8-4978-a2d3-e7281f116a25",
+      "comment": "",
+      "command": "click",
+      "target": "id=Button_Login_Conta",
+      "targets": [
+        ["id=Button_Login_Conta", "id"],
+        ["css=#Button_Login_Conta", "css:finder"],
+        ["xpath=//input[@id='Button_Login_Conta']", "xpath:attributes"],
+        ["xpath=//p/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "6678ac83-81d6-499d-8649-94117c25d061",
+    "name": "Aderir a plano",
+    "commands": [{
+      "id": "5826783c-0af9-4503-8b5e-ff1507a44d7e",
+      "comment": "",
+      "command": "setSpeed",
+      "target": "600",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5419b37a-b5be-416a-bbe4-df6060d120f5",
+      "comment": "",
+      "command": "open",
+      "target": "Mas_site_v21/Pagina_inical.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4a2432d7-fc8d-4fa7-ae86-617d2e2265da",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Perfil",
+      "targets": [
+        ["linkText=Perfil", "linkText"],
+        ["css=.nav-link:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Perfil')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNavAltMarkup']/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'Perfil.html')]", "xpath:href"],
+        ["xpath=//div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Perfil')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ca9b003-cbef-4df4-a1af-a1c493c26766",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Escolher plano",
+      "targets": [
+        ["linkText=Escolher plano", "linkText"],
+        ["css=.btn-warning", "css:finder"],
+        ["xpath=//a[contains(text(),'Escolher plano')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Planos.html')]", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Escolher plano')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "91007e7c-a3dc-407f-ac42-508aa2180c18",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-4:nth-child(1) .btn-primary",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "25b10f83-0064-4adc-8cd7-37e1b7ded8dc",
+      "comment": "",
+      "command": "click",
+      "target": "css=#exampleModal2 .btn-close",
+      "targets": [
+        ["css=#exampleModal2 .btn-close", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//div[@id='exampleModal2']/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "53e9f7bc-887f-4e8c-a904-175e8771fd7a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-4:nth-child(2) .btn-primary",
+      "targets": [
+        ["css=.col-4:nth-child(2) .btn-primary", "css:finder"],
+        ["xpath=(//input[@value='Benefícios'])[2]", "xpath:attributes"],
+        ["xpath=//div[2]/div/div/h3[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e04a21d9-082b-4918-8c86-9876950a1e0c",
+      "comment": "",
+      "command": "click",
+      "target": "css=#exampleModal .btn-close",
+      "targets": [
+        ["css=#exampleModal .btn-close", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='exampleModal']/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4ce0c7d2-b2c5-4205-ad0e-fc3df4601c29",
+      "comment": "",
+      "command": "click",
+      "target": "id=2",
+      "targets": [
+        ["id=2", "id"],
+        ["css=#\\32", "css:finder"],
+        ["xpath=//button[@id='2']", "xpath:attributes"],
+        ["xpath=//div[2]/div/div/h3[3]/button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "68084c29-9307-461c-a8e3-be0026b55e38",
+    "name": "Efetuar o registo do animal",
+    "commands": [{
+      "id": "0650e28d-7da0-437f-8612-84086b384a8e",
+      "comment": "",
+      "command": "setSpeed",
+      "target": "600",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f89f8055-7b9c-4bfe-8063-b0d6448dcd22",
+      "comment": "",
+      "command": "open",
+      "target": "Mas_site_v21/Pagina_inical.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dbb40abd-8c56-4a0e-bd9b-ef7fbfe43a9e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=O Meu Animal",
+      "targets": [
+        ["linkText=O Meu Animal", "linkText"],
+        ["css=.nav-link:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'O Meu Animal')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNavAltMarkup']/div/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'Animal.html')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'O Meu Animal')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f8c1f76-5ca5-4eff-9e7f-9e730db5726d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Adicionar Animal",
+      "targets": [
+        ["linkText=Adicionar Animal", "linkText"],
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//a[contains(text(),'Adicionar Animal')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Criar_Animal.html')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Adicionar Animal')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e75a56d2-f97c-455c-9c88-4e7f47312ed0",
+      "comment": "",
+      "command": "type",
+      "target": "id=Nome",
+      "targets": [
+        ["id=Nome", "id"],
+        ["css=#Nome", "css:finder"],
+        ["xpath=//input[@id='Nome']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "tobi"
+    }, {
+      "id": "a8799ca5-19a6-4ced-b0f2-e353cdebf137",
+      "comment": "",
+      "command": "type",
+      "target": "id=Animal",
+      "targets": [
+        ["id=Animal", "id"],
+        ["css=#Animal", "css:finder"],
+        ["xpath=//input[@id='Animal']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "gato"
+    }, {
+      "id": "ece9de65-9944-41f5-9f76-916cf8f5f599",
+      "comment": "",
+      "command": "type",
+      "target": "id=Raça",
+      "targets": [
+        ["id=Raça", "id"],
+        ["css=#Ra\\E7 a", "css:finder"],
+        ["xpath=//input[@id='Raça']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "persa"
+    }, {
+      "id": "b9f4e92d-2092-4d98-80fb-b11c3cb55eb0",
+      "comment": "",
+      "command": "type",
+      "target": "id=Gênero",
+      "targets": [
+        ["id=Gênero", "id"],
+        ["css=#G\\EAnero", "css:finder"],
+        ["xpath=//input[@id='Gênero']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "femenino"
+    }, {
+      "id": "6d994199-f999-44e4-a672-022b289b0d38",
+      "comment": "",
+      "command": "type",
+      "target": "id=Data",
+      "targets": [
+        ["id=Data", "id"],
+        ["css=#Data", "css:finder"],
+        ["xpath=//input[@id='Data']", "xpath:attributes"],
+        ["xpath=//div[5]/input", "xpath:position"]
+      ],
+      "value": "2017-03-06"
+    }, {
+      "id": "90f2a746-607e-45f5-bbe1-89f52beb1dab",
+      "comment": "",
+      "command": "click",
+      "target": "id=Button_Criar_Conta",
+      "targets": [
+        ["id=Button_Criar_Conta", "id"],
+        ["css=#Button_Criar_Conta", "css:finder"],
+        ["xpath=//button[@id='Button_Criar_Conta']", "xpath:attributes"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Adicionar Animal')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "37e531b4-d6a7-4643-9a6f-d1ba430e68d1",
+    "name": "Efetuar emcomenda",
+    "commands": [{
+      "id": "309e6983-6ef3-4824-84d9-9765c39b6edb",
+      "comment": "",
+      "command": "setSpeed",
+      "target": "600",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "97e9aaa8-c485-42b5-83f7-ebdd4f594ef9",
+      "comment": "",
+      "command": "open",
+      "target": "Mas_site_v21/Pagina_inical.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3329c8d5-5224-4c5d-b5e7-8a3b4a252482",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Encomendar",
+      "targets": [
+        ["linkText=Encomendar", "linkText"],
+        ["css=.nav-link:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Encomendar')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNavAltMarkup']/div/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'Mas_compra.html')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Encomendar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3ec1c2ad-5196-45a5-b595-3fca7830bcf1",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control",
+      "targets": [
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@type='text']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "gato"
+    }, {
+      "id": "4226c46a-f8c9-4ba8-a5e0-a05e79daa01b",
+      "comment": "",
+      "command": "click",
+      "target": "id=button-addon2",
+      "targets": [
+        ["id=button-addon2", "id"],
+        ["css=#button-addon2", "css:finder"],
+        ["xpath=//button[@id='button-addon2']", "xpath:attributes"],
+        ["xpath=//div[3]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pesquisar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ecd5af27-71e4-4326-88b9-b698fda8ed9b",
+      "comment": "",
+      "command": "click",
+      "target": "id=purina Pro plan adult sterilised para gatos (10kg)_60.9",
+      "targets": [
+        ["id=purina Pro plan adult sterilised para gatos (10kg)_60.9", "id"],
+        ["css=#purina\\ Pro\\ plan\\ adult\\ sterilised\\ para\\ gatos\\ \\(10kg\\)_60\\.9", "css:finder"],
+        ["xpath=//input[@id='purina Pro plan adult sterilised para gatos (10kg)_60.9']", "xpath:attributes"],
+        ["xpath=//div[2]/div/div/p[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c349986-61e7-44df-b731-869993e43999",
+      "comment": "",
+      "command": "click",
+      "target": "id=catzilla grain chicken para gatos (6kg)_36.95",
+      "targets": [
+        ["id=catzilla grain chicken para gatos (6kg)_36.95", "id"],
+        ["css=#catzilla\\ grain\\ chicken\\ para\\ gatos\\ \\(6kg\\)_36\\.95", "css:finder"],
+        ["xpath=//input[@id='catzilla grain chicken para gatos (6kg)_36.95']", "xpath:attributes"],
+        ["xpath=//div[3]/div/div/p[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "74e8694f-64d7-437e-af31-6c82dff76f19",
+      "comment": "",
+      "command": "click",
+      "target": "id=Salvaje adult chicken para gatos (1.5kg)_7.95",
+      "targets": [
+        ["id=Salvaje adult chicken para gatos (1.5kg)_7.95", "id"],
+        ["css=#Salvaje\\ adult\\ chicken\\ para\\ gatos\\ \\(1\\.5kg\\)_7\\.95", "css:finder"],
+        ["xpath=//input[@id='Salvaje adult chicken para gatos (1.5kg)_7.95']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/p[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "208f7c73-9d0a-40e1-8fb6-b03f1d5e9e3b",
+      "comment": "",
+      "command": "click",
+      "target": "id=button-carrinho",
+      "targets": [
+        ["id=button-carrinho", "id"],
+        ["css=.col-3:nth-child(2) > #button-carrinho", "css:finder"],
+        ["xpath=//button[@id='button-carrinho']", "xpath:attributes"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Carrinho')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f9a70d4b-2b45-4fe0-8dc4-6cfe024d20dd",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) .fa",
+      "targets": [
+        ["css=tr:nth-child(2) .fa", "css:finder"],
+        ["xpath=//div[@id='staticBackdrop']/div/div/div[2]/table/tbody/tr[2]/td[3]/button/i", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[3]/button/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "edc7dea2-0513-430a-bd6a-6978ad99657b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(5)",
+      "targets": [
+        ["css=.btn:nth-child(5)", "css:finder"],
+        ["xpath=(//button[@type='button'])[8]", "xpath:attributes"],
+        ["xpath=//div[@id='staticBackdrop']/div/div/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Comprar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "aee7de96-7531-4406-8368-5bd65993ab87",
+      "comment": "",
+      "command": "click",
+      "target": "id=button-carrinho",
+      "targets": [
+        ["id=button-carrinho", "id"],
+        ["css=#button-carrinho", "css:finder"],
+        ["xpath=//button[@id='button-carrinho']", "xpath:attributes"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Encomendas')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "10f5b64f-356e-46cd-abf5-105114c45673",
+      "comment": "",
+      "command": "click",
+      "target": "css=.modal-body > .btn:nth-child(2)",
+      "targets": [
+        ["css=.modal-body > .btn:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[9]", "xpath:attributes"],
+        ["xpath=//div[@id='staticBackdrop2']/div/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sair')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "a084e71c-3666-45b9-8a15-2ce0bbd58e6d",
+    "name": "Marcar consulta",
+    "commands": [{
+      "id": "14778e81-ba61-4fbc-b51e-d2af6fa5e051",
+      "comment": "",
+      "command": "setSpeed",
+      "target": "600",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "89911131-a691-420c-8fa1-4617e95b83d3",
+      "comment": "",
+      "command": "open",
+      "target": "/Mas_site_v21/Pagina_inical.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eae6eac3-ab92-4e3d-8e35-56b17f8d10c7",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Perfil",
+      "targets": [
+        ["linkText=Perfil", "linkText"],
+        ["css=.nav-link:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Perfil')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNavAltMarkup']/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'Perfil.html')]", "xpath:href"],
+        ["xpath=//div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Perfil')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dd3d179e-f482-4346-8750-5b074c3dd8f2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-outline-secondary:nth-child(2)",
+      "targets": [
+        ["css=.btn-outline-secondary:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Marcar nova consulta')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "455fbc15-aa9c-4a2f-8c8d-977f55a8e9b9",
+      "comment": "",
+      "command": "select",
+      "target": "css=select",
+      "targets": [],
+      "value": "label=tobi"
+    }, {
+      "id": "222d1c16-5eb2-4f15-b1e2-ab52f1e520bf",
+      "comment": "",
+      "command": "type",
+      "target": "id=data11",
+      "targets": [
+        ["id=data11", "id"],
+        ["name=data11", "name"],
+        ["css=#data11", "css:finder"],
+        ["xpath=//input[@id='data11']", "xpath:attributes"],
+        ["xpath=//div[@id='exampleModal']/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2023-02-01T12:12"
+    }, {
+      "id": "a3578bf5-168b-41a2-b510-8b5dde34b33d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='exampleModal']/div/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "1e1b5986-163d-42ef-a8d8-6be5cb35012b",
+    "name": " Aceder à agenda de consultas",
+    "commands": [{
+      "id": "c993ae49-1352-4099-98bf-2bd3656d0cdb",
+      "comment": "",
+      "command": "setSpeed",
+      "target": "600",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3a10d43b-12bb-4e7f-818d-a503981c2226",
+      "comment": "",
+      "command": "open",
+      "target": "/Mas_site_v21/Pagina_inical.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "178a54e4-2e4b-441b-b6cb-83294426bcf0",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Perfil",
+      "targets": [
+        ["linkText=Perfil", "linkText"],
+        ["css=.nav-link:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Perfil')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNavAltMarkup']/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'Perfil.html')]", "xpath:href"],
+        ["xpath=//div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Perfil')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "61f2d50a-d278-4dc5-a929-8bb71ac4711f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-outline-secondary:nth-child(1)",
+      "targets": [
+        ["css=.btn-outline-secondary:nth-child(1)", "css:finder"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'As minhas consultas')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d152f8fb-ee79-4430-a8ea-abc19b541d3f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.modal-dialog-scrollable .modal-body",
+      "targets": [
+        ["css=.modal-dialog-scrollable .modal-body", "css:finder"],
+        ["xpath=//div[@id='staticBackdrop2']/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "374f40df-5481-4e30-8957-2e0f87fbe8bf",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-secondary:nth-child(2)",
+      "targets": [
+        ["css=.btn-secondary:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[8]", "xpath:attributes"],
+        ["xpath=//div[@id='staticBackdrop2']/div/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sair')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "0ca8f101-d35d-4f37-b6fc-f2757a7c742a",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["54bc5a90-c0c7-44b7-9391-1ab8c76eec63", "e241aeaf-482b-435a-ae22-bd615aff6e04", "6678ac83-81d6-499d-8649-94117c25d061", "68084c29-9307-461c-a8e3-be0026b55e38", "a084e71c-3666-45b9-8a15-2ce0bbd58e6d", "1e1b5986-163d-42ef-a8d8-6be5cb35012b", "37e531b4-d6a7-4643-9a6f-d1ba430e68d1"]
+  }],
+  "urls": ["https://joaoviegas11.github.io/", "https://joaoviegas11.github.io/Mas_site_v21/Pagina_inical.html"],
+  "plugins": []
+}
